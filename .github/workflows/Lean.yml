@@ -76,7 +76,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         git clone https://github.com/Lienol/openwrt-package package/lienol
-        git clone https://github.com/kenzok8/litte package/litte     
+        git clone https://github.com/love0001238/litte.git package/litte     
 
     - name: 自定义配置文件Lean
       env:
