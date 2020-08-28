@@ -77,11 +77,9 @@ jobs:
         git clone https://github.com/jerrykuku/luci-theme-argon.git
 
     - name: 自定义配置文件
-      env:
-        CONFIG_FILE: 'customize.config'
       run: |
         rm -rf openwrt/.config*
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        cp -f ./customize.config openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
         cp -f ./default-settings openwrt/package/lean/default-settings/files/zzz-default-settings
         cp -f ./banner openwrt/package/base-files/files/etc/banner
