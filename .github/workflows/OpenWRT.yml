@@ -62,7 +62,7 @@ jobs:
         cd openwrt
         sed -i '5s/#//' feeds.conf.default
         
-    - name: 更新 & 安装 feeds
+    - name: 更新 & 安装
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
@@ -70,10 +70,10 @@ jobs:
         ./scripts/feeds install -a
 
     - name: 自定义安装源
-      working-directory: ./openwrt
+      working-directory: ./openwrt/package
       run: |
-        git clone https://github.com/Lienol/openwrt-package package/lienol
-        git clone https://github.com/love0001238/litte.git package/litte     
+        git clone https://github.com/jerrykuku/lua-maxminddb.git
+        git clone https://github.com/jerrykuku/luci-app-vssr.git
 
     - name: 自定义配置文件Lean
       env:
@@ -81,12 +81,10 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
-        cd openwrt && rm -rf package/litte/luci-app-ssr-plus
-        sudo -E chmod 755 package/litte/luci-app-adguardhome/root/etc/init.d/AdGuardHome
-        rm -rf package/litte/microsocks && rm -rf package/litte/redsocks2 && rm -rf package/litte/tcpping
+        # rm -rf package/litte/microsocks && rm -rf package/litte/redsocks2 && rm -rf package/litte/tcpping
         cp -f package/litte/default-settings package/lean/default-settings/files/zzz-default-settings
         cp -f package/litte/banner package/base-files/files/etc/banner
-        cp -f package/litte/Leandiffconfig .config && make defconfig
+        make defconfig
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
@@ -106,5 +104,5 @@ jobs:
     - name : 上传固件目录
       uses: actions/upload-artifact@main
       with:
-        name: Lean
+        name: openwrt
         path: openwrt/bin
