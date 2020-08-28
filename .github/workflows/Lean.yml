@@ -4,7 +4,7 @@
 # Author: kenzo
 #=================================================
 
-name: Lean_x86_64
+name: OpenWRT_x86_64
 
 on: 
   release:
@@ -13,9 +13,6 @@ on:
   push:
     branches: 
       - main
-
-  schedule:
-    - cron: 0 8 * * 5
   
   watch:
     types: [started]
@@ -28,7 +25,7 @@ jobs:
     - name: 检查
       uses: actions/checkout@main
 
-    - name: Initialization environment
+    - name: 配置环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
