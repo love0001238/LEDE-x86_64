@@ -74,6 +74,7 @@ jobs:
       run: |
         git clone https://github.com/jerrykuku/lua-maxminddb.git
         git clone https://github.com/jerrykuku/luci-app-vssr.git
+        git clone https://github.com/jerrykuku/luci-theme-argon.git
 
     - name: 自定义配置文件
       env:
