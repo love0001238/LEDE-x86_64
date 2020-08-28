@@ -1,1 +1,2 @@
-SSR https://github.com/jerrykuku
+luci-app-vssr [Hello World]
+
