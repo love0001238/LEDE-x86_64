@@ -8,3 +8,4 @@
 项目地址：https://github.com/jerrykuku/luci-theme-argon
 # 其它
 https://github.com/kenzok8
+https://github.com/KFERMercer/OpenWrt-CI
