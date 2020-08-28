@@ -57,4 +57,4 @@ echo 'hsts=0' > /root/.wgetrc
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
 
-exit 
+exit 0
