@@ -1,4 +1,4 @@
-name: OpenWRT_x86_64
+name: OpenWRT_X86_64
 
 on: 
   release:
