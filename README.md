@@ -10,3 +10,4 @@
 https://github.com/kenzok8
 https://github.com/KFERMercer/OpenWrt-CI
 https://github.com/tty228
+https://github.com/rufengsuixing
