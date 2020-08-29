@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: 检查
-      uses: actions/checkout@main
+      uses: actions/checkout@master
 
     - name: 配置环境
       env:
@@ -98,7 +98,7 @@ jobs:
         make -j$(nproc) V=s
 
     - name : 上传固件目录
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@master
       with:
         name: openwrt
         path: openwrt/bin
