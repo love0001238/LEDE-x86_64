@@ -7,6 +7,7 @@
 # luci-theme-argon ([中文](/README_ZH.md))
 项目地址：https://github.com/jerrykuku/luci-theme-argon
 # 其它
+https://github.com/P3TERX/Actions-OpenWrt
 https://github.com/garypang13
 https://github.com/kenzok8
 https://github.com/KFERMercer/OpenWrt-CI
